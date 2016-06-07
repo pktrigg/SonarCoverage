@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "name": "Python",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "program": "${file}",
+            "pythonPath": "c:/python34/python.exe",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ],
+            "args": ["-n","-i",  "C:/development/python/SonarNadirCalculator/01064_m66c448_SSS_20151219_205405_HH_HuginES7_GA4450_P_compressed.xtf"],
+        }
+   ]
+}
