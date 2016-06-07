@@ -21,10 +21,6 @@
 # uses the sensor position, altitude and heading rather than computing CMG heading which is a bit wobbly when navigation data has duplicate points
 # initial implementation
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6def1e97363fefd886be3034428f5bf5a3d4e604
 import math
 import argparse
 import sys
