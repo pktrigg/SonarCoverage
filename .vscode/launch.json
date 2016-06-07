@@ -13,7 +13,7 @@
                 "WaitOnNormalExit",
                 "RedirectOutput"
             ],
-            "args": ["-n","-i",  "C:/development/python/SonarCoverage/*.xtf", "-odix", "shapefiles"],
+            "args": ["-n","-i",  "C:/development/python/SonarCoverage/*.xtf", "-odix", "shapefiles"]
         }
    ]
 }
