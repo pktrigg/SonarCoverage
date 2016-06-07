@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "name": "Python",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "program": "${file}",
+            "pythonPath": "c:/python34/python.exe",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ],
+<<<<<<< HEAD
+            "args": ["-n","-i",  "C:/development/python/SonarCoverage/*.xtf", "-odix", "shapefiles"],
+=======
+            "args": ["-n","-i",  "C:/development/python/SonarNadirCalculator/01064_m66c448_SSS_20151219_205405_HH_HuginES7_GA4450_P_compressed.xtf"],
+>>>>>>> 51819111a4b681a940a21291f93a15415caeec07
+        }
+   ]
+}

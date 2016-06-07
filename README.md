@@ -1,2 +1,5 @@
-# SonarCoverage
-XTF sonar coverage and nadir gap calculator
+500000, 10000000, 50
+500000, 10000001, 60
+500000, 10000002, 70
+500000, 10000003, 80
+500000, 10000004, 90
