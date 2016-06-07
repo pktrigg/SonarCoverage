@@ -20,4 +20,4 @@
 # creates a coverage polygon representing the slant range setting of the sonar
 # creates a nadir gap polygon representing the null area under the sidescan which is poor quality data.
 # uses the sensor position, altitude and heading rather than computing CMG heading which is a bit wobbly when navigation data has duplicate points
-# initial implementation
+initial implementation
