@@ -8,6 +8,7 @@
 #version 1.00
 
 #DONE
+# tried to update teh readme file
 # added -odix to control the output folder
 # create a WGS84 prj file.  Good for ArcMap, but not always correct if we have an east/north XTF FileExistsError
 # added support for xtf wildcards
