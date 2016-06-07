@@ -35,10 +35,10 @@ from glob import glob
 import time
 
 def calcGap(altitude):
-    return (altitude * 0.33) + 12
+    return (altitude * 0.30) 
     
 def isValidGap(altitude, gap):
-    MINIMUMGAP = 25
+    MINIMUMGAP = 50
     if gap < MINIMUMGAP:
         return False
     return True
@@ -101,11 +101,11 @@ def main():
     # for every record there must be a corresponding geometry.
     shp_pt.autoBalance = 1
     shp_pt.field('XTFFile', 'C', 255)
+    shp_pt.field('ALTITUDE', 'C',255)
     
     shp_pg = shapefile.Writer(shapefile.POLYGON)
     shp_pg.autBalance = 1 #ensures gemoetry and attributes match
     shp_pg.field('XTFFile', 'C', 255)
-    # shp_pg.field('ALTITUDE_FLD')
 
     for filename in glob(args.inputFile):
         if args.createNadirPolygon:       
@@ -158,12 +158,13 @@ def savePolygon(leftSide, rightSide, shp_pg, shp_pt, fileName):
         outline.append(pt)
         
     print("creating geometry...")
-        
-    shp_pg.poly(parts=[outline]) #write the geometry
-    shp_pg.record(fileName)              
-    leftSide.clear()
-    rightSide.clear()
-
+    if len(outline) > 2:    
+        shp_pg.poly(parts=[outline]) #write the geometry
+        shp_pg.record(fileName)              
+        leftSide.clear()
+        rightSide.clear()
+    else:
+        print("oops, no geometry!!")
 def computeNadir(filename, shp_pt, shp_pg):
 
     leftSide = [] #storage for the left side of the nadir polygon
@@ -187,7 +188,7 @@ def computeNadir(filename, shp_pt, shp_pg):
 
         #add ping position to a shape file for QC purposes
         shp_pt.point(currEast,currNorth)
-        shp_pt.record(filename)
+        shp_pt.record(filename, str(currAltitude))
  
         # compute the range based on the user requesting either coverage polygons or nadir gap polygins
         currRange = calcGap(currAltitude)
