@@ -126,9 +126,15 @@ def main():
 
     print("saving shapefile...")
     #Save shapefiles
-    shp_pt.save(pointFile)
-    shp_pg.save(polyFile)
-    print("save complete.")
+    if len(shp_pt.shapes()) > 0:
+        shp_pt.save(pointFile)
+    else:
+        print ("Nothing to save in points shape file")
+    if len(shp_pg.shapes()) > 0:
+        shp_pg.save(polyFile)
+        print("save complete.")
+    else:
+        print ("Nothing to save in polygon shape file")
 
     # now write out the prj file of spatial reference, so we can open in ArcMap
     prj = open(polyFile + ".prj", "w")
