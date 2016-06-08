@@ -35,7 +35,7 @@ from glob import glob
 import time
 
 def calcGap(altitude):
-    return (altitude * 0.30) 
+    return (altitude * 0.70) / 2.0
     
 def isValidGap(altitude, gap):
     MINIMUMGAP = 50
@@ -157,14 +157,14 @@ def savePolygon(leftSide, rightSide, shp_pg, shp_pt, fileName):
     for pt in rightSide:
         outline.append(pt)
         
-    print("creating geometry...")
+    # print("creating geometry...")
     if len(outline) > 2:    
         shp_pg.poly(parts=[outline]) #write the geometry
         shp_pg.record(fileName)              
         leftSide.clear()
         rightSide.clear()
-    else:
-        print("oops, no geometry!!")
+    # else:
+        # print("oops, no geometry!!")
 def computeNadir(filename, shp_pt, shp_pg):
 
     leftSide = [] #storage for the left side of the nadir polygon
