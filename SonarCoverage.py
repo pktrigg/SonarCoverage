@@ -81,9 +81,9 @@ def main():
 
     start_time = time.time() # time the process
     parser = argparse.ArgumentParser(description='Read XTF file and create either a coverage or Nadir gap polygon.')
-    parser.add_argument('-c', action='store_true', default=False, dest='createCoveragePolygon', help='-c compute a polygon across the entire sonar region, ie COVERAGE')
+    # parser.add_argument('-c', action='store_true', default=False, dest='createCoveragePolygon', help='-c compute a polygon across the entire sonar region, ie COVERAGE')
     parser.add_argument('-n', action='store_true', default=False, dest='createNadirPolygon', help='-n compute a polygon across the NADIR region')
-    parser.add_argument('-i', dest='inputFile', action='store', help='-i <filename> input filename in ASCI Easting,Northing,Altidude comma separated format')
+    parser.add_argument('-i', dest='inputFile', action='store', help='-i <filename> input sonar XTF filename')
     parser.add_argument('-o', dest='outputFile', action='store', help='-o <filename> output shape filename. Do not provide file extension. It will be added for you  [default = Nadir_pg]')
     parser.add_argument('-odix', dest='outputFolder', action='store', help='-odix <folder> output folder to store shape files.  If not specified, the files will be alongside the input XTF file')
     
